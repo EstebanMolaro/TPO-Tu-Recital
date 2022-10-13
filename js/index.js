@@ -1,3 +1,5 @@
+
+
 let cad =`
         <div class="contiene-logo">
             <a href="index.html">
@@ -7,7 +9,7 @@ let cad =`
         </div>
         <nav class="menu">
             <ul class="list">
-                <li><a href="index.html" style="color:rgb(237, 189, 185);">Inicio</a></li>
+                <li><a href="index.html";">Inicio</a></li>
                 <li><a href="recitales.html">Recitales</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="acerca-de.html">Acerca de</a></li>
