@@ -1,0 +1,85 @@
+body {
+    display: grid;
+    grid-template-areas: "head head head head"
+    "gale gale gale side"
+    "foot foot foot foot ";
+}
+
+.header{
+    grid-area: head;
+}
+
+.main {
+    grid-area: gale;
+    height: 100%;
+}
+
+article img {
+    max-width: 100%;
+}
+
+.sidebar{
+    grid-area: side;
+    min-width: 20vw;
+    display: none;
+}
+
+.foot {
+    grid-area: foot;
+}
+
+
+@media screen and (min-width: 1080px) {
+    .sidebar{
+        grid-area: side;
+        min-width: 20vw;
+        display: initial;
+    }
+
+    .main div {
+        margin: 20px;
+        display: grid;
+        grid-template-areas: "f1 f2 f3"
+        "f4 f5 f6"
+        "f7 f8 f9";
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    
+    div article {
+        border-radius: 10px;
+        box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    div article img {
+        border-radius: 10px;
+    }
+
+    .main div:nth-child(1) {
+        grid-area: f1;
+    }
+    .main div:nth-child(2) {
+        grid-area: f2;
+    }
+    .main div:nth-child(3) {
+        grid-area: f3;
+    }
+    .main div:nth-child(4) {
+        grid-area: f4;
+    }
+    .main div:nth-child(5) {
+        grid-area: f5;
+    }
+    .main div:nth-child(6) {
+        grid-area: f6;
+    }
+    .main div:nth-child(7) {
+        grid-area: f7;
+    }
+    .main div:nth-child(8) {
+        grid-area: f8;
+    }
+    .main div:nth-child(9) {
+        grid-area: f9;
+    }
+}
