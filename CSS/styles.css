@@ -9,7 +9,6 @@ body {
     text-align: center;
     display: grid;
     grid-template-columns: [x0]4fr [x1]2fr [x2];
-    /* grid-template-rows: [y0]1fr [y1]1fr [y2]1fr [y3]1fr [y4]; */
 }
 
 a {
@@ -27,7 +26,6 @@ a {
     grid-column: x0 / x2;
     /* grid-row: y0 / y1; */
     grid-gap: 10em;
-    border: 2px rgb(61, 55, 126) solid;
 }
 
 .header .contiene-logo{
@@ -111,6 +109,10 @@ div#demo {
     display: grid;
 }
 
+div a#a-la-gale{
+    padding: 0px;
+}
+
 h3 a {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
@@ -127,7 +129,6 @@ h3 a:hover {
 
 .foot {
     min-height: 10vh;
-    border: 2px black solid;
     margin-bottom: 0%;
     grid-column: x0 / x3;
 }
@@ -165,10 +166,13 @@ h3 a:hover {
     }
 
 
-    
-
     .list li a {
         padding: 10px;
+    }
+
+    .list li a:hover{
+        transition: color 0.3s ease-out;
+
     }
 
     .main {
