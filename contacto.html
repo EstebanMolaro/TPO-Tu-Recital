@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,30 +22,63 @@
             <div class="cabecera">
                 <h2>Envíanos tu evento</h2>
             </div>
-            <form id= "formulario" action="https://formsubmit.co/molaro95@gmail.com" method="post">
-                <div class= "form-control">
-                    <label for="nombre">Nombre</label>
-                    <input id= "nombre" type="text">
-                    <p></p>
-                </div>
+         <form id= "formulario" action="https://formspree.io/f/mjvzeood" method="POST">
+             <div class= "form-control">
+                 <label for="name">Nombre</label>
+                 <input name= "name" id="name" type="text" required>
+                <p></p>
+             </div>
     
-                <div class= "form-control">
-                    <label for="email">Email</label>
-                    <input id= "email" type="email">
-                    <p></p>
-                </div>
-    
-                <div class= "form-control">
-                    <label for="mensaje">Mensaje</label>
-                    <textarea name= 'mensaje' id="mensaje" cols="30" rows="10"></textarea>
-                    <p></p>
-                </div>
-                <button type="submit" id= "button">Enviar</button>
-                </div>
-                 
-            </form>
+             <div class= "form-control">
+                <label for="email">Email</label>
+                <input name= "email" id= "email" type="email" required>
+                <p></p>
+             </div>
+               <div class= "form-control">
+                 <label for="message">Mensaje</label>
+                 <textarea name= 'message' id= "message" cols="30" rows="10" required></textarea>
+                <p></p>
+             </div>
+             <button type="submit" id= "button">Enviar</button>
+             <p id="formulario-status"></p>
+             </div>
+             <script src="JS/contacto.js"></script> 
+        </form>
         </div>
-    <script src="JS/contacto.js"></script>    
+
+        <script>
+            var form = document.getElementById("formulario");
+            
+            async function handleSubmit(event) {
+              event.preventDefault();
+              var status = document.getElementById("formulario-status");
+              var data = new FormData(event.target);
+              fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+              }).then(response => {
+                if (response.ok) {
+                  status.innerHTML = "Gracias por contactarnos!";
+                  form.reset()
+                } else {
+                  response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                      status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                    } else {
+                      status.innerHTML = "¡Ups! Hubo un problema al enviar su formulario"
+                    }
+                  })
+                }
+              }).catch(error => {
+                status.innerHTML = "¡Ups! Hubo un problema al enviar su formulario"
+              });
+            }
+            form.addEventListener("submit", handleSubmit)
+        </script>
+
     </main>
 
     <aside class="sidebar">

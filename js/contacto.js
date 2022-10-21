@@ -1,8 +1,8 @@
 window.addEventListener("load", ()=>{
     const form = document.querySelector("#formulario")
-    const nombre = document.getElementById("nombre")
+    const name = document.getElementById("name")
     const email = document.getElementById("email")
-    const mensaje = document.getElementById("mensaje")
+    const message = document.getElementById("message")
 
     form.addEventListener("submit", (e) => {
         e.preventDefault()
@@ -10,14 +10,14 @@ window.addEventListener("load", ()=>{
     }) 
     
     const validaCampos = () => {
-        const nombreValor = nombre.value.trim()
+        const nameValor = name.value.trim()
         const emailValor = email.value.trim()
-        const mensajeValor = mensaje.value.trim()
+        const messageValor = message.value.trim()
         
-        if(!nombreValor){
-            validaFalla(nombre, "Campo Vacío")
+        if(!nameValor){
+            validaFalla(name, "Campo Vacío")
         } else {
-            validaOk (nombre)
+            validaOk (name)
         }  
         
         if(!emailValor){
@@ -28,9 +28,9 @@ window.addEventListener("load", ()=>{
             validaOk(email)
         }
 
-        if(!mensajeValor){
-            validaFalla(mensaje, 'Campo Vacío')
-        } else{validaOk(mensaje)}
+        if(!messageValor){
+            validaFalla(message, 'Campo Vacío')
+        } else{validaOk(message)}
     }
     const validaFalla = (input, msje) => {
         const formControl = input.parentElement
@@ -50,3 +50,4 @@ window.addEventListener("load", ()=>{
     
 })
 const btn = document.getElementById('button');
+
