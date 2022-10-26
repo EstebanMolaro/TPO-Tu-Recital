@@ -19,3 +19,4 @@ let cad =`
 `
 
 document.getElementById("head").innerHTML=cad;
+
